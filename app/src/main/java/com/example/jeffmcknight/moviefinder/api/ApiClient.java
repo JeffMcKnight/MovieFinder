@@ -47,4 +47,8 @@ public class ApiClient {
     public void getPopularMovie(Callback<MovieBean> callback) {
         mApiService.getPopularMovie().enqueue(callback);
     }
+
+    public void getTopRatedMovie(Callback<MovieBean> callback){
+        mApiService.getTopRatedMovie().enqueue(callback);
+    }
 }

@@ -56,6 +56,7 @@ public class DiscoverActivity extends AppCompatActivity {
             }
         };
         mApiClient.getPopularMovie(callback);
+        mApiClient.getTopRatedMovie(callback);
     }
 
     @Override
