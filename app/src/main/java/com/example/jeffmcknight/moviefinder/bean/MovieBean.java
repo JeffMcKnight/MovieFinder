@@ -9,16 +9,16 @@ import java.util.Arrays;
 public class MovieBean {
     public int page;
     public ResultsItem[] results;
-    public int totalResults;
-    public int totalPages;
+    public int total_results;
+    public int total_pages;
 
     @Override
     public String toString() {
         return "MovieBean{" +
                 "page=" + page +
                 ", results=" + Arrays.toString(results) +
-                ", totalResults=" + totalResults +
-                ", totalPages=" + totalPages +
+                ", total_results=" + total_results +
+                ", total_pages=" + total_pages +
                 '}';
     }
 }

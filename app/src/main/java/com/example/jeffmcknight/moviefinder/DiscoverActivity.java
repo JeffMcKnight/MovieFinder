@@ -20,7 +20,6 @@ import retrofit2.Response;
 public class DiscoverActivity extends AppCompatActivity {
 
     private static final String TAG = DiscoverActivity.class.getSimpleName();
-    private ApiClient mApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +32,17 @@ public class DiscoverActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                getMovies();
+                Snackbar.make(view, "Updating movie data", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-        mApiClient = ApiClient.create();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+    /**
+     * Use this method to test that you can make a successful API call
+     */
+    private void getMovies() {
         Callback<MovieBean> callback = new Callback<MovieBean>() {
             @Override
             public void onResponse(Call<MovieBean> call, Response<MovieBean> response) {
@@ -55,8 +55,7 @@ public class DiscoverActivity extends AppCompatActivity {
                 Log.w(TAG, "onFailure: ", t);
             }
         };
-        mApiClient.getPopularMovie(callback);
-        mApiClient.getTopRatedMovie(callback);
+        ApiClient.getInstance().getTopRatedMovie(callback);
     }
 
     @Override

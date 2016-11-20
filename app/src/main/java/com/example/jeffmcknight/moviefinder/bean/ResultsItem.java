@@ -7,38 +7,38 @@ import java.util.Arrays;
  * Created by: ModelGenerator on 11/17/16
  */
 public class ResultsItem {
-    public String posterPath;
+    public String poster_path;
     public boolean adult;
     public String overview;
-    public String releaseDate;
-    public Integer[] genreIds;
+    public String release_date;
+    public Integer[] genre_ids;
     public int id;
-    public String originalTitle;
-    public String originalLanguage;
+    public String original_title;
+    public String original_language;
     public String title;
-    public String backdropPath;
+    public String backdrop_path;
     public double popularity;
-    public int voteCount;
+    public int vote_count;
     public boolean video;
-    public double voteAverage;
+    public double vote_average;
 
     @Override
     public String toString() {
         return "ResultsItem{" +
-                "posterPath='" + posterPath + '\'' +
+                "poster_path='" + poster_path + '\'' +
                 ", adult=" + adult +
                 ", overview='" + overview + '\'' +
-                ", releaseDate='" + releaseDate + '\'' +
-                ", genreIds=" + Arrays.toString(genreIds) +
+                ", release_date='" + release_date + '\'' +
+                ", genre_ids=" + Arrays.toString(genre_ids) +
                 ", id=" + id +
-                ", originalTitle='" + originalTitle + '\'' +
-                ", originalLanguage='" + originalLanguage + '\'' +
+                ", original_title='" + original_title + '\'' +
+                ", original_language='" + original_language + '\'' +
                 ", title='" + title + '\'' +
-                ", backdropPath='" + backdropPath + '\'' +
+                ", backdrop_path='" + backdrop_path + '\'' +
                 ", popularity=" + popularity +
-                ", voteCount=" + voteCount +
+                ", vote_count=" + vote_count +
                 ", video=" + video +
-                ", voteAverage=" + voteAverage +
+                ", vote_average=" + vote_average +
                 '}';
     }
 }

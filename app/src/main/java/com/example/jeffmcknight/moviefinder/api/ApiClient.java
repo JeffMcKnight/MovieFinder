@@ -14,15 +14,6 @@ public class ApiClient {
     private static ApiClient sApiClient;
     private ApiService mApiService;
 
-    public static ApiClient create() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ApiService.BASE_HTTP_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        ApiService apiService = retrofit.create(ApiService.class);
-        return getInstance(apiService);
-    }
-
     public void setApiService(ApiService apiService) {
         mApiService = apiService;
     }
@@ -33,11 +24,15 @@ public class ApiClient {
     /**
      *
      * @return
-     * @param apiService
      */
-    public static ApiClient getInstance(ApiService apiService) {
+    public static ApiClient getInstance() {
         if (sApiClient == null) {
             sApiClient = new ApiClient();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(ApiService.BASE_HTTP_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            ApiService apiService = retrofit.create(ApiService.class);
             sApiClient.setApiService(apiService);
         }
         return sApiClient;
