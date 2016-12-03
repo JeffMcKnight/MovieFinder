@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MovieFinder</string>
     <string name="action_settings">Settings</string>
+    <string name="description_thumbnail">thumbnail</string>
+    <string name="original_title">Original Title:</string>
+    <string name="plot_synopsis">Plot synopsis:</string>
 </resources>

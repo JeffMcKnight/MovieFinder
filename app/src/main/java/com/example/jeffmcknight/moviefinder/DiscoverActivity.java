@@ -37,6 +37,10 @@ public class DiscoverActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        if (getResources().getBoolean(R.bool.is_two_pane)){
+            DetailsFragment.launch(this);
+
+        }
     }
 
     /**
