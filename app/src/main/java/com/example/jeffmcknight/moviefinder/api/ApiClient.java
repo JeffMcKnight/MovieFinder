@@ -2,7 +2,10 @@ package com.example.jeffmcknight.moviefinder.api;
 
 import com.example.jeffmcknight.moviefinder.bean.MovieBean;
 
+import java.io.IOException;
+
 import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -39,11 +42,33 @@ public class ApiClient {
     }
 
 
+    /**
+     * Asynchronously retrieves the list of popular movies from themoviedb.org
+     * @param callback
+     */
     public void getPopularMovie(Callback<MovieBean> callback) {
         mApiService.getPopularMovie().enqueue(callback);
     }
 
+    /**
+     * Synchronously retrieves the list of popular movies from themoviedb.org
+     * @return
+     */
+    public Response<MovieBean> getPopularMovieSync() {
+        try {
+            return mApiService.getPopularMovie().execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * Asynchronously retrieves the list of top rated movies from themoviedb.org
+     * @param callback
+     */
     public void getTopRatedMovie(Callback<MovieBean> callback){
         mApiService.getTopRatedMovie().enqueue(callback);
     }
+
 }

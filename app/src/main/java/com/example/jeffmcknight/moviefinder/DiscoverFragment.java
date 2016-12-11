@@ -45,7 +45,7 @@ public class DiscoverFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        MovieProviderService.getPopularMovies(context);
+        MovieProviderService.launch(DbContract.Movie.buildBulkInsertUri(), context);
     }
 
     @Override

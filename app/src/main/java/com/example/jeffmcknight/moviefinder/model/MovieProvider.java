@@ -97,6 +97,7 @@ public class MovieProvider extends ContentProvider {
                             null,
                             null,
                             null);
+                    Dump.cursor(cursor);
                     readableDatabase.setTransactionSuccessful();
                     break;
                 case URI_DISCOVERY:
@@ -108,7 +109,6 @@ public class MovieProvider extends ContentProvider {
                             null,
                             null,
                             sortOrder);
-                    Dump.cursor(cursor);
                     readableDatabase.setTransactionSuccessful();
                     break;
                 default:
