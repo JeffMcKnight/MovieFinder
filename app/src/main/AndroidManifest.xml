@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.example.jeffmcknight.moviefinder"
+            android:name=".model.MovieProvider"
+            android:exported="false"
+            >
+        </provider>
+        <service android:name=".model.MovieProviderService"/>
     </application>
 
 </manifest>
